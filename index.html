@@ -5,302 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Games & Demos Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ... your existing CSS here ... */
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .about-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .badges img {
-            height: 28px;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
-        }
-
-        .badges img:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                padding: 20px;
-            }
-            
-            .about-content p {
-                font-size: 1rem;
-            }
-            
-            .badges {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .games-section {
-            background: white;
+        /* Add or adjust styles for the additional image section if needed */
+        .additional-games-section {
+            background: rgba(255, 255, 255, 0.95); /* Or match .games-section style */
             border-radius: 15px;
             padding: 40px;
             margin-bottom: 50px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center; /* Center the images */
         }
 
-        .games-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+        .additional-games-section h3 {
+            font-size: 2rem; /* Adjust as needed */
+            margin-bottom: 30px;
             color: #4a5568;
         }
 
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 20px;
+        .additional-games-section p {
+            display: flex; /* Use flexbox to align images */
+            flex-wrap: wrap; /* Allow images to wrap to the next line */
+            justify-content: center; /* Center images within the paragraph */
+            gap: 20px; /* Space between images */
+        }
+        .additional-games-section img {
+            border-radius: 8px; /* Give them rounded corners */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add a subtle shadow */
+            transition: transform 0.3s ease;
+        }
+        .additional-games-section img:hover {
+            transform: translateY(-5px); /* Lift on hover */
         }
 
-        .game-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid #e2e8f0;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .game-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .game-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-
-        .game-card p {
-            color: #718096;
-            margin-bottom: 20px;
-        }
-
-        .game-links {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5a67d8;
-        }
-
-        .btn-secondary {
-            background: #e2e8f0;
-            color: #4a5568;
-        }
-
-        .btn-secondary:hover {
-            background: #cbd5e0;
-        }
-
-        .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #4a5568;
-            transition: all 0.3s ease;
-            border: 2px solid #e2e8f0;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .social-icon {
-            font-size: 2rem;
-            margin-right: 15px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: white;
-        }
-
-        .social-link span {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .social-link.instagram:hover {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-            color: white;
-        }
-
-        .social-link.twitter:hover {
-            background: #1da1f2;
-            color: white;
-        }
-
-        .social-link.discord:hover {
-            background: #5865f2;
-            color: white;
-        }
-
-        .social-link.youtube:hover {
-            background: #ff0000;
-            color: white;
-        }
-
-        .social-link.github:hover {
-            background: #333;
-            color: white;
-        }
-
-        .social-link.linkedin:hover {
-            background: #0077b5;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .games-section,
-            .contact-section {
-                padding: 25px;
-            }
-
-            .games-section h2,
-            .contact-section h2 {
-                font-size: 2rem;
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .game-links {
-                flex-direction: column;
-            }
-
-            .social-links {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .social-link {
-                padding: 15px;
-            }
-            
-            .social-icon {
-                font-size: 1.5rem;
-                width: 40px;
-                height: 40px;
-                margin-right: 12px;
-            }
-        }
+        /* ... rest of your CSS ... */
     </style>
 </head>
 <body>
@@ -313,11 +51,9 @@
         <section class="about-section">
             <div class="about-content">
                 <h1>Hello, my name is Edgar Novas</h1>
-
                 <h3>I'm a coder that knows many different languages like C, C#, C++, Python, and Java.</h3>
-
                 <p>I'm a passionate coder that loves FPS, Turn Based Games, RTS <strong>Developer at MayBStudios</strong></p>
-                <p>I love making games in Unity and in the future I want to make a game with Unreal Engine &lt;3</p>
+                <p>I love making games in Unity and in the future I want to make a game with Unreal Engine <3</p>
                 <p>The programs I normally use are</p>
                 <div class="badges">
                     <img src="https://img.shields.io/badge/Unity-%20-red" alt="Unity">
@@ -326,7 +62,7 @@
                     <img src="https://img.shields.io/badge/Photoshop-%20-blue" alt="Photoshop">
                     <img src="https://img.shields.io/badge/Premiere-%20-white" alt="Premiere">
                 </div>
-               <p>  I make games in my free time.</p>
+                <p> I make games in my free time.</p>
                 <br/>
                 <p>I'm also very passionate about video games like League of Legends, Valorant, Battlefield, and Apex Legends.</p>
                 <br/>
@@ -338,45 +74,45 @@
             <div class="games-grid">
                 <div class="game-card">
                     <div class="game-image">
-                         <img src="https://img.itch.zone/aW1nLzE4MjAzNDE5LnBuZw==/315x250%23c/C07tQP.png" alt="Captura de pantalla de Shadows Of Nyesa">
-                        
+                        <img src="https://img.itch.zone/aW1nLzE4MjAzNDE5LnBuZw==/315x250%23c/C07tQP.png" alt="Captura de pantalla de Shadows Of Nyesa">
                     </div>
-                       
-                        <h3>Shadows Of Nyesa</h3>
-                        <p>An engaging parkour world with beautiful graphics!</p>
+                    <h3>Shadows Of Nyesa</h3>
+                    <p>An engaging parkour world with beautiful graphics!</p>
                     <div class="game-links">
                         <a href="https://obitojowel.itch.io/shadows-of-nyesa" class="btn btn-primary">Play Game</a>
-                        
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="game-image">Demo Preview</div>
+                    <div class="game-image">
+                        <img src="ruta/a/tu/imagen-interactive-demo.jpg" alt="Preview de Demo Interactiva">
+                    </div>
                     <h3>Interactive Demo</h3>
                     <p>A showcase of modern web technologies and animations. Experience smooth interactions and responsive design.</p>
                     <div class="game-links">
                         <a href="#" class="btn btn-primary">Play Game</a>
-                       
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="game-image">Game Preview</div>
+                    <div class="game-image">
+                        <img src="ruta/a/tu/imagen-arcade-classic.jpg" alt="Preview de Juego Arcade">
+                    </div>
                     <h3>Arcade Classic</h3>
                     <p>A modern take on classic arcade games with retro aesthetics and contemporary gameplay mechanics.</p>
                     <div class="game-links">
                         <a href="#" class="btn btn-primary">Play Game</a>
-                       
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="game-image">Project Image</div>
+                    <div class="game-image">
+                        <img src="ruta/a/tu/imagen-creative-tool.jpg" alt="Imagen de Herramienta Creativa">
+                    </div>
                     <h3>Creative Tool</h3>
                     <p>An innovative tool for digital creativity. Features intuitive controls and powerful functionality.</p>
                     <div class="game-links">
                         <a href="#" class="btn btn-primary">Play Game</a>
-                       
                     </div>
                 </div>
             </div>
@@ -396,7 +132,6 @@
                     <div class="social-icon">🐦</div>
                     <span>Twitter</span>
                 </a>
-                
                 <a href="https://www.youtube.com/@explosivo3065" class="social-link youtube" target="_blank" rel="noopener noreferrer">
                     <div class="social-icon">📺</div>
                     <span>YouTube</span>
@@ -407,48 +142,24 @@
                 </a>
             </div>
         </section>
-    </div>
-</body>
+
+        <section class="additional-games-section">
+            <h3>My socials and where I upload my games:</h3>
+            <p>
+                <a href="https://edgarnovas.itch.io/" target="_blank">
+                    <img src="https://img.itch.zone/aW1nLzk4MTUxMjEucG5n/315x250%23c/uNmwrd.png" width="200" height="150" alt="Game 1"/>
+                </a>
+                <a href="https://edgarnovas.itch.io/" target="_blank">
+                    <img src="https://img.itch.zone/aW1nLzk1NTA0MDQucG5n/315x250%23c/DRlzHo.png" width="200" height="150" alt="Game 2"/>
+                </a>
+                <a href="https://edgarnovas.itch.io/" target="_blank">
+                    <img src="https://img.itch.zone/aW1nLzkyMTIwOTUucG5n/315x250%23c/NFy233.png" width="200" height="150" alt="Game 3"/>
+                </a>
+                <a href="https://edgarnovas.itch.io/" target="_blank">
+                    <img src="https://img.itch.zone/aW1nLzkxODQ1MTAuanBn/315x250%23c/B9ZLR3.jpg" width="200" height="150" alt="Game 4"/>
+                </a>
+            </p>
+        </section>
+
+    </div> </body>
 </html>
-
-
-<h1>Hello, my name is Edgar Novas</h1>
-
-<h3>I'm a coder that knows many different languages like C, C#, C++, Python, and Java.</h3>
-
-<p>
-  I'm a passionate coder that loves FPS, Turn-Based Games, and RTS games.<br/>
-  <strong>Developer at MayBStudios</strong><br/>
-  I love making games in Unity and in the future I want to make a game with Unreal Engine ❤️
-</p>
-
-<h3>Tools I normally use:</h3>
-<p>
-  <img src="https://img.shields.io/badge/Unity-%20-red" alt="Unity Badge" />
-  <img src="https://img.shields.io/badge/Unreal-%20-purple" alt="Unreal Badge" />
-  <img src="https://img.shields.io/badge/Maya-%20-green" alt="Maya Badge" />
-  <img src="https://img.shields.io/badge/Photoshop-%20-blue" alt="Photoshop Badge" />
-  <img src="https://img.shields.io/badge/Premiere-%20-white" alt="Premiere Badge" />
-</p>
-
-<h3>My socials and where I upload my games:</h3>
-
-<p>
-  <a href="https://edgarnovas.itch.io/" target="_blank">
-    <img src="https://img.itch.zone/aW1nLzk4MTUxMjEucG5n/315x250%23c/uNmwrd.png" width="200" height="150" alt="Game 1"/>
-  </a>
-  <a href="https://edgarnovas.itch.io/" target="_blank">
-    <img src="https://img.itch.zone/aW1nLzk1NTA0MDQucG5n/315x250%23c/DRlzHo.png" width="200" height="150" alt="Game 2"/>
-  </a>
-  <a href="https://edgarnovas.itch.io/" target="_blank">
-    <img src="https://img.itch.zone/aW1nLzkyMTIwOTUucG5n/315x250%23c/NFy233.png" width="200" height="150" alt="Game 3"/>
-  </a>
-  <a href="https://edgarnovas.itch.io/" target="_blank">
-    <img src="https://img.itch.zone/aW1nLzkxODQ1MTAuanBn/315x250%23c/B9ZLR3.jpg" width="200" height="150" alt="Game 4"/>
-  </a>
-</p>
-
-<hr/>
-
-<p>
- 
