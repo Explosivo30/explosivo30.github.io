@@ -1,423 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Games & Demos Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EXPLOSIVO30 — Portfolio</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+  <meta property="og:title"        content="EXPLOSIVO30 — Game Dev & Maker" />
+  <meta property="og:description"  content="Building games, tools and experiments. Check out my itch.io games and GitHub projects." />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://explosivo30.github.io" />
+  <meta property="og:image"        content="https://explosivo30.github.io/preview.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="EXPLOSIVO30 — Game Dev & Maker" />
+  <meta name="twitter:description" content="Building games, tools and experiments." />
+  <meta name="twitter:image"       content="https://explosivo30.github.io/preview.png" />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .about-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .badges img {
-            height: 28px;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
-        }
-
-        .badges img:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                padding: 20px;
-            }
-
-            .about-content p {
-                font-size: 1rem;
-            }
-
-            .badges {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .games-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .games-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #4a5568;
-        }
-
-        /* Fixed contact-section styling */
-        .contact-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #4a5568;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .game-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid #e2e8f0;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .game-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .game-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-
-        .game-card p {
-            color: #718096;
-            margin-bottom: 20px;
-        }
-
-        .game-links {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5a67d8;
-        }
-
-        .btn-secondary {
-            background: #e2e8f0;
-            color: #4a5568;
-        }
-
-        .btn-secondary:hover {
-            background: #cbd5e0;
-        }
-
-        .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #4a5568;
-            transition: all 0.3s ease;
-            border: 2px solid #e2e8f0;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .social-icon {
-            font-size: 2rem;
-            margin-right: 15px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: white;
-        }
-
-        .social-link span {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .social-link.instagram:hover {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-            color: white;
-        }
-
-        .social-link.twitter:hover {
-            background: #1da1f2;
-            color: white;
-        }
-
-        .social-link.discord:hover {
-            background: #5865f2;
-            color: white;
-        }
-
-        .social-link.youtube:hover {
-            background: #ff0000;
-            color: white;
-        }
-
-        .social-link.github:hover {
-            background: #333;
-            color: white;
-        }
-
-        .social-link.linkedin:hover {
-            background: #0077b5;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .games-section,
-            .contact-section {
-                padding: 25px;
-            }
-
-            .games-section h2,
-            .contact-section h2 {
-                font-size: 2rem;
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .game-links {
-                flex-direction: column;
-            }
-
-            .social-links {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .social-link {
-                padding: 15px;
-            }
-
-            .social-icon {
-                font-size: 1.5rem;
-                width: 40px;
-                height: 40px;
-                margin-right: 12px;
-            }
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>My Games & Demos</h1>
-            <p>Showcasing my creative projects and interactive experiences</p>
-        </header>
 
-        <section class="about-section">
-            <div class="about-content">
-                <h1>Hello, my name is Edgar Novas</h1>
+<div id="progress-bar"></div>
+<canvas id="particles"></canvas>
+<div class="grid-bg"></div>
+<div class="cursor-dot" id="cursor"></div>
 
-                <h3>I'm a coder that knows many different languages like C, C#, C++, Python, and Java.</h3>
-
-                <p>I'm a passionate coder that loves FPS, Turn Based Games, RTS <strong>Developer at MayBStudios</strong></p>
-                <p>I love making games in Unity and in the future I want to make a game with Unreal Engine &lt;3</p>
-                <p>The programs I normally use are</p>
-                <div class="badges">
-                    <img src="https://img.shields.io/badge/Unity-%20-red" alt="Unity">
-                    <img src="https://img.shields.io/badge/Unreal-%20-purple" alt="Unreal Engine">
-                    <img src="https://img.shields.io/badge/Maya-%20-green" alt="Maya">
-                    <img src="https://img.shields.io/badge/Photoshop-%20-blue" alt="Photoshop">
-                    <img src="https://img.shields.io/badge/Premiere-%20-white" alt="Premiere">
-                </div>
-                <p>I make games in my free time.</p>
-                <br />
-                <p>I'm also very passionate about video games like League of Legends, Valorant, Battlefield, and Apex Legends.</p>
-                <br />
-            </div>
-        </section>
-
-        <section class="games-section">
-            <h2>Featured Projects</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="#">
-                        <img src="https://img.itch.zone/aW1nLzE4MjAzNDE5LnBuZw==/315x250%23c/C07tQP.png" alt="Captura de pantalla de Shadows Of Nyesa">
-                    </div>
-
-                    <h3>Shadows Of Nyesa</h3>
-                    <p>An engaging parkour world with beautiful graphics!</p>
-                    <div class="game-links">
-                        <a href="https://obitojowel.itch.io/shadows-of-nyesa" class="btn btn-primary">Play Game</a>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-image">Demo Preview</div>
-                    <h3>Interactive Demo</h3>
-                    <p>A showcase of modern web technologies and animations. Experience smooth interactions and responsive design.</p>
-                    <div class="game-links">
-                        <a href="#" class="btn btn-primary">Play Game</a>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-image">Game Preview</div>
-                    <h3>Arcade Classic</h3>
-                    <p>A modern take on classic arcade games with retro aesthetics and contemporary gameplay mechanics.</p>
-                    <div class="game-links">
-                        <a href="#" class="btn btn-primary">Play Game</a>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <div class="game-image">Project Image</div>
-                    <h3>Creative Tool</h3>
-                    <p>An innovative tool for digital creativity. Features intuitive controls and powerful functionality.</p>
-                    <div class="game-links">
-                        <a href="#" class="btn btn-primary">Play Game</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <h2>Connect With Me</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #718096; font-size: 1.1rem;">
-                Follow me on social media and let's connect!
-            </p>
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/explosivo30/" class="social-link instagram" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon">📷</div>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://x.com/i/flow/login?redirect_after_login=%2Fexplosivonomiss" class="social-link twitter" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon">🐦</div>
-                    <span>Twitter</span>
-                </a>
-                <a href="https://www.youtube.com/@explosivo3065" class="social-link youtube" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon">📺</div>
-                    <span>YouTube</span>
-                </a>
-                <a href="https://github.com/Explosivo30" class="social-link github" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon">💻</div>
-                    <span>GitHub</span>
-                </a>
-            </div>
-        </section>
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Game details">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div id="modal-img-area"></div>
+    <div class="modal-body">
+      <span class="modal-tag" id="modal-tag"></span>
+      <div class="modal-title" id="modal-title"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <a class="btn btn-cyan" id="modal-link" href="#" target="_blank" rel="noopener">
+        <span>▶ Play on itch.io</span>
+      </a>
     </div>
+  </div>
+</div>
+
+<nav>
+  <a class="nav-logo" href="#hero">EXPLOSIVO<span>30</span></a>
+  <ul class="nav-links">
+    <li><a href="#games">Games</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-badge">Game Dev &amp; Maker</div>
+  <h1 class="hero-title glitch" data-text="EXPLOSIVO30">EXPLOSIVO<span class="accent">30</span></h1>
+  <p class="hero-sub">
+    Building <span class="typed-text" id="typed"></span><span class="cursor-blink"></span><br>
+    Open source. No filters.
+  </p>
+  <div class="hero-cta">
+    <a class="btn btn-cyan" href="#games"><span>▶ See games</span></a>
+    <a class="btn btn-ghost" href="#projects">GitHub projects</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="games">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">itch.io</div>
+      <h2 class="section-title">Games</h2>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card magenta reveal"
+         data-img="Images/SombraDelLadron.png"
+         data-tag="Game Jam"
+         data-title="La Sombra del ladron"
+         data-desc="El objetivo del juego es conseguir el dinero suficiente para poder pagar el hospital a tu hermano. Roba, vende y compra los diferentes objetos de la gente en la ciudad durante el día, pero ten cuidado, puede que la policía te detenga, así que no rellenes las 5 estrellas que hay.
+
+Mientras más acciones realizas, caerá la noche , y es cuando la diversión empieza. Algunos objetos recolectados por el día, servirán para robar en casas o diferentes establecimientos que hay.
+
+Descubre que ocurre en la noche, en el bar, en la iglesia, en el parque, etc.
+
+Consigue tu objetivo de salvar a tu hermano, intenta que no te detengan y disfruta del arte del robo."
+         data-href="https://hedenrag.itch.io/la-sombra-del-ladron">
+      <div class="card-img-wrap">
+        <img class="card-img" src="Images/SombraDelLadron.png" alt="Game 1"
+          onerror="this.parentElement.innerHTML='<div class=card-img-placeholder>[ no image ]</div>'">
+      </div>
+      <span class="card-tag tag-game">Game Jam</span>
+      <div class="card-title">La sombra del Ladron</div>
+      <div class="card-desc">Descubre que ocurre en la noche, en el bar, en la iglesia, en el parque, etc.</div>
+      <div class="card-footer">
+        <span class="card-link-label">Click to view →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </div>
+
+    <div class="card magenta reveal"
+         data-img="Images/ShadowsOfNyesa.png"
+         data-tag="Indie"
+         data-title="Shadow Of Nyesa"
+         data-desc="In this fast-paced parkour game you mus ttravel through a desertic planet inhabited by forgotten beings that forgot who they were.
+
+Run at high speeds, slow time to shoot enemies and keep on your track to advance. 
+
+This game is the final project made for our studies. We hope you enjoy playing our piece of dedication and work."
+         data-href="https://obitojowel.itch.io/shadows-of-nyesa">
+      <div class="card-img-wrap">
+        <img class="card-img" src="Images/ShadowsOfNyesa.png" alt="Game 2"
+          onerror="this.parentElement.innerHTML='<div class=card-img-placeholder>[ no image ]</div>'">
+      </div>
+      <span class="card-tag tag-game">Indie</span>
+      <div class="card-title">Shadows Of Nyesa</div>
+      <div class="card-desc">Run through the desert, discover dark secrets.. </div>
+      <div class="card-footer">
+        <span class="card-link-label">Click to view →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </div>
+
+    <div class="card magenta reveal"
+         data-img="Images/GravityShiftImage.png"
+         data-tag="Pixel Art"
+         data-title="Gravity Shift"
+         data-desc="Drift through the void in this mind-bending pixel art puzzle adventure. You’ve lost control of your spacecraft, and the only way to regain command is to master the ship’s unstable environment. Rotate the levels, twist your perspective, and find your way through increasingly complex challenges. Every move counts as gravity and orientation shift with each rotation. Test your spatial awareness and reclaim your ship before it’s lost."
+         data-href="https://explosivo30.itch.io/gravity-shift">
+      <div class="card-img-wrap">
+        <img class="card-img" src="Images/GravityShiftImage.png" alt="Game 3"
+          onerror="this.parentElement.innerHTML='<div class=card-img-placeholder>[ no image ]</div>'">
+      </div>
+      <span class="card-tag tag-game">Pixel Art</span>
+      <div class="card-title">Gravity Shift</div>
+      <div class="card-desc">Drift through the void in this mind-bending pixel art puzzle adventure.</div>
+      <div class="card-footer">
+        <span class="card-link-label">Click to view →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="projects">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">GitHub</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="cards-grid">
+    <a class="card reveal" href="https://github.com/Explosivo30/YOUR-REPO-1" target="_blank" rel="noopener">
+      <span class="card-tag tag-code">Code</span>
+      <div class="card-title">Repo Name 1</div>
+      <div class="card-desc">What this project does, what language it's written in, and why it might be useful or interesting.</div>
+      <div class="card-footer">
+        <span class="card-link-label">GitHub →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </a>
+
+    <a class="card reveal" href="https://github.com/Explosivo30/YOUR-REPO-2" target="_blank" rel="noopener">
+      <span class="card-tag tag-tool">Tool</span>
+      <div class="card-title">Repo Name 2</div>
+      <div class="card-desc">Description of the tool or library. Mention the tech stack, technologies, or use cases.</div>
+      <div class="card-footer">
+        <span class="card-link-label">GitHub →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </a>
+
+    <a class="card reveal" href="https://github.com/Explosivo30/YOUR-REPO-3" target="_blank" rel="noopener">
+      <span class="card-tag tag-code">Experiment</span>
+      <div class="card-title">Repo Name 3</div>
+      <div class="card-desc">Could be an experiment, a prototype, or any project you want to share with the world.</div>
+      <div class="card-footer">
+        <span class="card-link-label">GitHub →</span>
+        <span class="card-arrow">›</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Info</div>
+      <h2 class="section-title">About me</h2>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-avatar reveal">
+      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+        <rect x="5" y="1" width="6" height="6" fill="#00e5ff"/>
+        <rect x="6" y="2" width="1" height="1" fill="#080b10"/>
+        <rect x="9" y="2" width="1" height="1" fill="#080b10"/>
+        <rect x="6" y="4" width="4" height="1" fill="#080b10"/>
+        <rect x="4" y="7" width="8" height="5" fill="#1e3a5f"/>
+        <rect x="3" y="8" width="2" height="4" fill="#1e3a5f"/>
+        <rect x="11" y="8" width="2" height="4" fill="#1e3a5f"/>
+        <rect x="5" y="12" width="2" height="3" fill="#0d2a45"/>
+        <rect x="9" y="12" width="2" height="3" fill="#0d2a45"/>
+        <rect x="5" y="7" width="6" height="1" fill="#ff2d6b"/>
+      </svg>
+    </div>
+
+    <div class="about-panel reveal">
+      <p>Hey, I'm <strong style="color:var(--cyan)">Explosivo30</strong>. I make games and code projects for the pure fun and passion of it.</p>
+      <p>I do a bit of everything: from indie games in game jams to tools and random experiments. If I can think it, I'll try to build it.</p>
+      <p> I like to learn a lot. Look at what I've got around here and contact me if you want</p>
+    </div>
+
+    <div class="about-panel reveal">
+      <div class="stat-list">
+        <div class="stat-row">
+          <span class="stat-key">Games published</span>
+          <span class="stat-val" style="color:var(--magenta)" data-target="3">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">GitHub repos</span>
+          <span class="stat-val" data-target="12">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Game Jams</span>
+          <span class="stat-val" style="color:var(--magenta)" data-target="2">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Favourite engine</span>
+          <span class="stat-val" style="font-size:.85rem;letter-spacing:1px">Unity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Links</div>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="links-bar reveal">
+    <a class="link-pill" href="https://github.com/Explosivo30" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+
+    <a class="link-pill" href="https://explosivo30.itch.io" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.886v1.02c0 1.29 1.2 2.426 2.287 2.426 1.308 0 2.395-1.158 2.395-2.426 0 1.268 1.064 2.426 2.372 2.426 1.308 0 2.35-1.158 2.35-2.426 0 1.268 1.085 2.426 2.393 2.426h.024c1.308 0 2.393-1.158 2.393-2.426 0 1.268 1.042 2.426 2.35 2.426 1.308 0 2.372-1.158 2.372-2.426 0 1.268 1.087 2.426 2.395 2.426C22.8 8.332 24 7.196 24 5.906v-1.02c-.02-.558-2.08-2.926-3.13-3.548C19.1.8 3.88.83 3.13 1.338zm8.31 7.049c-.363 0-.72.044-1.056.128l-.364-.128H6.273C5.2 8.387 3.71 9.16 3.037 9.954c.018 5.46-.05 10.35.05 14.046H20.9c.1-3.696.032-8.586.05-14.046-.672-.793-2.163-1.567-3.236-1.567h-3.747l-.364.128a4.246 4.246 0 00-1.056-.128h-.107zm-.107 1.96h.107c.65 0 1.248.277 1.69.72-1.268.352-2.376.93-3.25 1.743a3.15 3.15 0 011.453-.463zm-5.255 2.04h1.96v1.96h-1.96zm9.844 0h1.96v1.96h-1.96zm-4.922 1.96h.107c1.073 0 1.96 1.568 1.96 3.528 0 1.96-.887 3.528-1.96 3.528h-.107c-1.073 0-1.96-1.568-1.96-3.528 0-1.96.887-3.528 1.96-3.528z"/></svg>
+      itch.io
+    </a>
+
+    <a class="link-pill" href="https://x.com/explosivonomiss" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.265 5.633zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Twitter / X
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>EXPLOSIVO30</span> — Personal portfolio · Handcrafted with HTML/CSS/JS
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
