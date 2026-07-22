@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EZ Scene Collab | Collaborative Unity scene editing</title>
+  <meta name="description" content="Collaboratively edit Unity scenes from multiple Windows Editors over LAN or a private VPN, with authoritative locks, reconnect recovery, and optional ProBuilder support.">
+  <link rel="canonical" href="https://explosivo30.github.io/ez-scene-collab/">
+  <meta property="og:title" content="EZ Scene Collab">
+  <meta property="og:description" content="Build Unity scenes together with live synchronization, authoritative locks, and reconnect recovery.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://explosivo30.github.io/ez-scene-collab/">
+  <meta property="og:image" content="https://explosivo30.github.io/ez-scene-collab/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EZ Scene Collab">
+  <meta name="twitter:description" content="Build Unity scenes together.">
+  <meta name="twitter:image" content="https://explosivo30.github.io/ez-scene-collab/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="Return to Explosivo30 portfolio">
+      <span class="brand-owner">EXPLOSIVO<span>30</span></span>
+      <span class="brand-divider">/</span>
+      <span class="brand-product">EZ SCENE COLLAB</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Product navigation">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#compatibility">Compatibility</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy reveal visible">
+        <div class="eyebrow">Unity Editor collaboration tool</div>
+        <h1>Build Unity scenes <span>together.</span></h1>
+        <p class="hero-lead">
+          Collaboratively edit the same active scene from multiple Windows Editors.
+          Synchronize supported scene changes, prevent conflicts with authoritative
+          locks, and recover after temporary disconnects without entering Play Mode.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#features">Explore features</a>
+          <a class="button button-secondary" href="mailto:ezjuegitos@gmail.com?subject=EZ%20Scene%20Collab%20Support">Email support</a>
+        </div>
+        <ul class="status-list" aria-label="Current verified configuration">
+          <li><span class="status-dot"></span>Version 0.5.0</li>
+          <li><span class="status-dot"></span>Windows tested</li>
+          <li><span class="status-dot"></span>ProBuilder optional</li>
+        </ul>
+      </div>
+
+      <div class="sync-demo reveal" aria-label="Illustration of two synchronized Unity Editors">
+        <div class="sync-topbar">
+          <span>LIVE SESSION</span>
+          <span class="online"><i></i> CONNECTED</span>
+        </div>
+        <div class="editor-pair">
+          <article class="editor-panel editor-host">
+            <div class="editor-title"><span>HOST</span><strong>World_Blockout</strong></div>
+            <div class="hierarchy-row"><i class="caret"></i>Environment</div>
+            <div class="hierarchy-row indent"><i class="cube"></i>Bridge</div>
+            <div class="hierarchy-row indent selected local"><i class="cube"></i>SpawnPlatform <b>YOU</b></div>
+            <div class="hierarchy-row indent"><i class="cube"></i>LightRig</div>
+            <div class="hierarchy-row"><i class="caret"></i>Gameplay</div>
+            <div class="hierarchy-row indent remote"><i class="cube"></i>Checkpoint_03 <b>ED</b></div>
+          </article>
+          <div class="sync-link" aria-hidden="true"><span></span><b>SYNC</b><span></span></div>
+          <article class="editor-panel editor-client">
+            <div class="editor-title"><span>CLIENT</span><strong>World_Blockout</strong></div>
+            <div class="hierarchy-row"><i class="caret"></i>Environment</div>
+            <div class="hierarchy-row indent"><i class="cube"></i>Bridge</div>
+            <div class="hierarchy-row indent locked"><i class="cube"></i>SpawnPlatform <b>LOCK</b></div>
+            <div class="hierarchy-row indent"><i class="cube"></i>LightRig</div>
+            <div class="hierarchy-row"><i class="caret"></i>Gameplay</div>
+            <div class="hierarchy-row indent selected"><i class="cube"></i>Checkpoint_03 <b>YOU</b></div>
+          </article>
+        </div>
+        <div class="sync-console"><span>REV 1842</span><code>Transform + Inspector + Hierarchy synchronized</code></div>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Highlights">
+      <div><strong>NO PLAY MODE</strong><span>Works directly in the Editor</span></div>
+      <div><strong>HOST AUTHORITATIVE</strong><span>One clear source of truth</span></div>
+      <div><strong>PRIVATE NETWORKS</strong><span>LAN, Tailscale, or Hamachi</span></div>
+      <div><strong>OPTIONAL INTEGRATION</strong><span>Core works without ProBuilder</span></div>
+    </section>
+
+    <section class="content-section" id="features">
+      <header class="section-heading reveal">
+        <div><span class="section-index">01 / CAPABILITIES</span><h2>Made for collaborative level editing</h2></div>
+        <p>Keep the project in source control, open the same scene, and let EZ Scene Collab handle supported live scene state.</p>
+      </header>
+      <div class="feature-grid">
+        <article class="feature-card reveal"><span class="feature-code">SYNC_01</span><h3>Scene changes</h3><p>Synchronize transforms, names, active state, parent changes, hierarchy order, creation, and deletion.</p></article>
+        <article class="feature-card reveal"><span class="feature-code">LOCK_02</span><h3>Visible ownership</h3><p>Remote locks prevent selection and movement. Every collaborator receives a clear ghost color.</p></article>
+        <article class="feature-card reveal"><span class="feature-code">DATA_03</span><h3>Inspector state</h3><p>Propagate supported serialized components and properties, including common lights, colliders, and materials.</p></article>
+        <article class="feature-card reveal"><span class="feature-code">BUILD_04</span><h3>Objects and prefabs</h3><p>Create Unity primitives and prefab instances when all participants share matching project assets and GUIDs.</p></article>
+        <article class="feature-card reveal"><span class="feature-code">REC_05</span><h3>Reconnect recovery</h3><p>Request missed revisions after a short disconnect, falling back to an authoritative snapshot when required.</p></article>
+        <article class="feature-card reveal"><span class="feature-code">PB_06</span><h3>Optional ProBuilder 6.x</h3><p>Automatically detect compatible ProBuilder installations and synchronize completed supported mesh edits.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section workflow-section" id="workflow">
+      <header class="section-heading reveal">
+        <div><span class="section-index">02 / WORKFLOW</span><h2>From separate Editors to one session</h2></div>
+      </header>
+      <ol class="steps">
+        <li class="reveal"><span class="step-number">01</span><div><h3>Match the project</h3><p>Everyone opens the same Unity version, project revision, branch, active scene, scripts, assets, and compatible packages.</p></div></li>
+        <li class="reveal"><span class="step-number">02</span><div><h3>Start the host</h3><p>One Editor starts the authoritative session and remains open. Clients join using the reachable address and TCP port.</p></div></li>
+        <li class="reveal"><span class="step-number">03</span><div><h3>Edit with clear locks</h3><p>Select an available object to request ownership. Remote objects become colored and non-pickable until released.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="content-section" id="compatibility">
+      <header class="section-heading reveal">
+        <div><span class="section-index">03 / COMPATIBILITY</span><h2>Transparent release status</h2></div>
+        <p>Only configurations that have actually been checked are presented as verified.</p>
+      </header>
+      <div class="compatibility-layout">
+        <div class="compatibility-table reveal">
+          <div class="compat-row table-head"><span>Configuration</span><span>Status</span></div>
+          <div class="compat-row"><span>Windows</span><strong class="tested">Tested</strong></div>
+          <div class="compat-row"><span>Unity 6000.0.58f2</span><strong class="tested">Tested</strong></div>
+          <div class="compat-row"><span>URP 17.0.4 development project</span><strong class="tested">Tested</strong></div>
+          <div class="compat-row"><span>Core without ProBuilder / Newtonsoft</span><strong class="tested">Tested</strong></div>
+          <div class="compat-row"><span>ProBuilder 6.0.9</span><strong class="tested">Tested</strong></div>
+          <div class="compat-row"><span>macOS, Linux, HDRP, Unity 6.5+</span><strong class="pending">Not verified</strong></div>
+        </div>
+        <aside class="notice reveal">
+          <span class="notice-label">SECURITY &amp; LIMITS</span>
+          <h3>Designed for trusted teams</h3>
+          <p>Version 0.5.0 uses plain TCP without built-in authentication or encryption. Use a trusted LAN or private VPN such as Tailscale or Hamachi.</p>
+          <p>Asset files are not transferred. Teams must share matching assets through Git, Unity Version Control, or another source-control system.</p>
+          <p>Only the active scene is synchronized. Performance depends on scene complexity, component size, mesh density, latency, and participant count.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section support-section" id="support">
+      <div class="support-panel reveal">
+        <div>
+          <span class="section-index">04 / SUPPORT</span>
+          <h2>Need help with a session?</h2>
+          <p>Include your Unity version, EZ Scene Collab version, connection method, host/client role, console messages, and reproduction steps.</p>
+        </div>
+        <div class="support-actions">
+          <a class="button button-primary" href="mailto:ezjuegitos@gmail.com?subject=EZ%20Scene%20Collab%20Support">ezjuegitos@gmail.com</a>
+          <a class="button button-secondary" href="../">Publisher portfolio</a>
+        </div>
+      </div>
+      <div class="support-meta reveal">
+        <span>Support language: English or Spanish</span>
+        <span>Last updated: July 22, 2026</span>
+        <span>Publisher: EXPLOSIVO30</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../">EXPLOSIVO<span>30</span></a>
+    <p>EZ Scene Collab is an independent Unity Editor tool. Unity is a trademark of Unity Technologies.</p>
+    <a href="#top">Back to top</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
