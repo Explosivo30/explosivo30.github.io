@@ -10,12 +10,20 @@
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://explosivo30.github.io" />
   <meta property="og:image"        content="https://explosivo30.github.io/preview.png" />
+  <meta property="og:image:type"   content="image/png" />
+  <meta property="og:image:alt"    content="EXPLOSIVO30 — Unity, C#, tools, and indie games." />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="EXPLOSIVO30 — Game Dev & Maker" />
   <meta name="twitter:description" content="Building games, tools and experiments." />
   <meta name="twitter:image"       content="https://explosivo30.github.io/preview.png" />
+  <meta name="twitter:image:alt"   content="EXPLOSIVO30 — Unity, C#, tools, and indie games." />
+
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -29,17 +37,62 @@
 <div class="grid-bg"></div>
 <div class="cursor-dot" id="cursor"></div>
 
-<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Game details">
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" inert aria-labelledby="modal-title" aria-describedby="modal-desc">
   <div class="modal" id="modal">
     <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
-    <div id="modal-img-area"></div>
-    <div class="modal-body">
-      <span class="modal-tag" id="modal-tag"></span>
-      <div class="modal-title" id="modal-title"></div>
-      <p class="modal-desc" id="modal-desc"></p>
-      <a class="btn btn-cyan" id="modal-link" href="#" target="_blank" rel="noopener">
-        <span>▶ Play on itch.io</span>
-      </a>
+    <div id="game-modal-content">
+      <div id="modal-img-area"></div>
+      <div class="modal-body">
+        <span class="modal-tag" id="modal-tag"></span>
+        <div class="modal-title" id="modal-title"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <a class="btn btn-cyan" id="modal-link" href="#" target="_blank" rel="noopener">
+          <span>▶ Play on itch.io</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="edition-modal-content" id="edition-modal-content" hidden>
+      <div class="edition-modal-header">
+        <span class="modal-tag edition-family-tag">Unity Editor tool family</span>
+        <div class="modal-title" id="edition-modal-title">Choose your Scene Collab edition</div>
+        <p class="modal-desc" id="edition-modal-desc">Start with the original free edition or explore the advanced commercial tool built for more controlled collaborative sessions.</p>
+      </div>
+
+      <div class="edition-grid">
+        <article class="edition-card edition-card-full">
+          <div class="edition-badges">
+            <span class="edition-badge badge-paid">Paid</span>
+            <span class="edition-badge">Advanced</span>
+          </div>
+          <p class="edition-kicker">Full Edition</p>
+          <h3>EZ Scene Collab</h3>
+          <p>Authoritative hosting, visible ownership locks, reconnect recovery, and optional ProBuilder support for trusted teams.</p>
+          <ul>
+            <li>Host-authoritative sessions</li>
+            <li>Conflict-preventing object locks</li>
+            <li>Recovery after short disconnects</li>
+          </ul>
+          <a class="btn btn-cyan edition-action" href="ez-scene-collab/index.html"><span>Explore Full Edition</span></a>
+        </article>
+
+        <article class="edition-card edition-card-lite">
+          <div class="edition-badges">
+            <span class="edition-badge badge-free">Free</span>
+            <span class="edition-badge">Open Source</span>
+            <span class="edition-badge badge-beta">Early Beta</span>
+          </div>
+          <p class="edition-kicker">Original Lite Edition</p>
+          <h3>Scene Collab Lite</h3>
+          <p>The original Firebase-powered experiment for basic real-time scene collaboration in Unity 6+.</p>
+          <ul>
+            <li>Firebase Realtime Database</li>
+            <li>Basic creation and transform sync</li>
+            <li>GPL-3.0 licensed</li>
+          </ul>
+          <a class="btn btn-ghost edition-action" href="https://github.com/Explosivo30/UnitySceneCollaborationToolLite" target="_blank" rel="noopener noreferrer"><span>View Free Lite on GitHub</span></a>
+        </article>
+      </div>
     </div>
   </div>
 </div>
@@ -79,7 +132,7 @@
   </div>
 
   <div class="cards-grid">
-    <div class="card magenta reveal"
+    <div class="card magenta reveal" role="button" tabindex="0" aria-haspopup="dialog"
          data-img="Images/SombraDelLadron.png"
          data-tag="Game Jam"
          data-title="La Sombra del ladron"
@@ -104,7 +157,7 @@ Consigue tu objetivo de salvar a tu hermano, intenta que no te detengan y disfru
       </div>
     </div>
 
-    <div class="card magenta reveal"
+    <div class="card magenta reveal" role="button" tabindex="0" aria-haspopup="dialog"
          data-img="Images/ShadowsOfNyesa.png"
          data-tag="Indie"
          data-title="Shadow Of Nyesa"
@@ -127,7 +180,7 @@ This game is the final project made for our studies. We hope you enjoy playing o
       </div>
     </div>
 
-    <div class="card magenta reveal"
+    <div class="card magenta reveal" role="button" tabindex="0" aria-haspopup="dialog"
          data-img="Images/GravityShiftImage.png"
          data-tag="Pixel Art"
          data-title="Gravity Shift"
@@ -160,15 +213,15 @@ This game is the final project made for our studies. We hope you enjoy playing o
   </div>
 
   <div class="cards-grid">
-    <a class="card reveal" href="ez-scene-collab/index.html">
-      <span class="card-tag tag-tool">Tool</span>
-      <div class="card-title">EZ Scene Collab</div>
-      <div class="card-desc">Collaboratively edit Unity scenes from multiple Windows Editors with authoritative locks, reconnect recovery, and optional ProBuilder support.</div>
+    <button class="card reveal project-selector-card" type="button" data-modal-type="editions" aria-haspopup="dialog">
+      <span class="card-tag tag-tool">Tool Family</span>
+      <div class="card-title">Scene Collaboration Tools</div>
+      <div class="card-desc">Choose between the advanced commercial edition and the original free, open-source Lite edition for Unity.</div>
       <div class="card-footer">
-        <span class="card-link-label">GitHub →</span>
+        <span class="card-link-label">Compare editions →</span>
         <span class="card-arrow">›</span>
       </div>
-    </a>
+    </button>
 <!--
     <a class="card reveal" href="https://github.com/Explosivo30/YOUR-REPO-2" target="_blank" rel="noopener">
       <span class="card-tag tag-code">Code</span>

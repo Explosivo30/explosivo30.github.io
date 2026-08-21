@@ -70,46 +70,114 @@ const statIO = new IntersectionObserver(entries => {
 document.querySelectorAll('.stat-val[data-target]').forEach(el => statIO.observe(el));
 
 /* ── MODAL / LIGHTBOX ───────────────────────────────── */
-const overlay    = document.getElementById('modal-overlay');
-const modalImgEl = document.getElementById('modal-img-area');
-const modalTag   = document.getElementById('modal-tag');
-const modalTitle = document.getElementById('modal-title');
-const modalDesc  = document.getElementById('modal-desc');
-const modalLink  = document.getElementById('modal-link');
-const modalClose = document.getElementById('modal-close');
+const overlay        = document.getElementById('modal-overlay');
+const modal          = document.getElementById('modal');
+const gameContent    = document.getElementById('game-modal-content');
+const editionContent = document.getElementById('edition-modal-content');
+const modalImgEl     = document.getElementById('modal-img-area');
+const modalTag       = document.getElementById('modal-tag');
+const modalTitle     = document.getElementById('modal-title');
+const modalDesc      = document.getElementById('modal-desc');
+const modalLink      = document.getElementById('modal-link');
+const modalClose     = document.getElementById('modal-close');
+let lastModalTrigger = null;
 
 function openModal(card) {
-  const img   = card.dataset.img   || '';
-  const tag   = card.dataset.tag   || '';
-  const title = card.dataset.title || '';
-  const desc  = card.dataset.desc  || '';
-  const href  = card.dataset.href  || '#';
+  const isEditionSelector = card.dataset.modalType === 'editions';
+  lastModalTrigger = card;
 
-  modalImgEl.innerHTML = img
-    ? `<img class="modal-img" src="${img}" alt="${title}" onerror="this.parentElement.innerHTML='<div class=modal-img-placeholder>[ no image ]</div>'">`
-    : `<div class="modal-img-placeholder">[ no image ]</div>`;
+  gameContent.hidden = isEditionSelector;
+  editionContent.hidden = !isEditionSelector;
+  modal.classList.toggle('editions-modal', isEditionSelector);
 
-  modalTag.textContent   = tag;
-  modalTitle.textContent = title;
-  modalDesc.textContent  = desc;
-  modalLink.href         = href;
+  if (isEditionSelector) {
+    overlay.setAttribute('aria-labelledby', 'edition-modal-title');
+    overlay.setAttribute('aria-describedby', 'edition-modal-desc');
+  } else {
+    const img   = card.dataset.img   || '';
+    const tag   = card.dataset.tag   || '';
+    const title = card.dataset.title || '';
+    const desc  = card.dataset.desc  || '';
+    const href  = card.dataset.href  || '#';
 
+    modalImgEl.innerHTML = img
+      ? `<img class="modal-img" src="${img}" alt="${title}" onerror="this.parentElement.innerHTML='<div class=modal-img-placeholder>[ no image ]</div>'">`
+      : `<div class="modal-img-placeholder">[ no image ]</div>`;
+
+    modalTag.textContent   = tag;
+    modalTitle.textContent = title;
+    modalDesc.textContent  = desc;
+    modalLink.href         = href;
+    overlay.setAttribute('aria-labelledby', 'modal-title');
+    overlay.setAttribute('aria-describedby', 'modal-desc');
+  }
+
+  overlay.inert = false;
   overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
+  requestAnimationFrame(() => {
+    const firstAction = isEditionSelector ? editionContent.querySelector('.edition-action') : modalClose;
+    (firstAction || modalClose).focus();
+  });
 }
 
 function closeModal() {
+  if (!overlay.classList.contains('open')) return;
   overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.inert = true;
   document.body.style.overflow = '';
+
+  if (lastModalTrigger) {
+    lastModalTrigger.focus();
+    lastModalTrigger = null;
+  }
 }
 
-document.querySelectorAll('.card[data-href]').forEach(card => {
-  card.addEventListener('click', () => openModal(card));
-});
-modalClose.addEventListener('click', closeModal);
-overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function getModalFocusableElements() {
+  return Array.from(modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+    .filter(element => !element.hidden && element.offsetParent !== null);
+}
 
+document.querySelectorAll('.card[data-href], .card[data-modal-type]').forEach(card => {
+  card.addEventListener('click', () => openModal(card));
+
+  if (!(card instanceof HTMLButtonElement) && !(card instanceof HTMLAnchorElement)) {
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      openModal(card);
+    });
+  }
+});
+
+modalClose.addEventListener('click', closeModal);
+overlay.addEventListener('click', event => { if (event.target === overlay) closeModal(); });
+document.addEventListener('keydown', event => {
+  if (!overlay.classList.contains('open')) return;
+
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeModal();
+    return;
+  }
+
+  if (event.key !== 'Tab') return;
+  const focusable = getModalFocusableElements();
+  if (!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
 /* ── PARTICLES ──────────────────────────────────────── */
 (function () {
   const canvas = document.getElementById('particles');
