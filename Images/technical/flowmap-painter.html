@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flowmap Painter — EXPLOSIVO30</title>
+  <meta name="description" content="Paint where the water should go. An in-editor brush for authoring flow direction on a mesh and baking that data into a texture.">
+  <meta property="og:title" content="Flowmap Painter — EXPLOSIVO30">
+  <meta property="og:description" content="Paint where the water should go. An in-editor brush for authoring flow direction on a mesh and baking that data into a texture.">
+  <meta property="og:image" content="https://explosivo30.github.io/Images/technical/flowmap/poster.png">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="showcase.css?v=20261027-3">
+</head>
+<body class="case-page" style="--accent:#6edbff">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="case-nav"><a class="case-logo" href="../../index.html">EXPLOSIVO<span>30</span></a><a class="case-back" href="../../index.html#projects">← All projects</a></header>
+  <main class="case-main" id="main">
+    <div class="case-hero">
+      <div><p class="case-kicker">02 / Technical art tools</p><h1>Flowmap Painter</h1><p class="case-lead">Paint where the water should go. An in-editor brush for authoring flow direction on a mesh and baking that data into a texture.</p></div>
+      <dl class="case-facts"><div><dt>Focus</dt><dd>Technical art tooling</dd></div><div><dt>Built with</dt><dd>Unity · C# · ShaderLab</dd></div><div><dt>Approach</dt><dd>Mesh data → flow texture</dd></div></dl>
+    </div>
+    <figure class="case-player">
+      <div class="case-player-bar"><span><span class="case-live-dot"></span>PROJECT DEMONSTRATION</span><span>UNITY / SOURCE-DRIVEN CAPTURE</span></div>
+      <video controls playsinline preload="metadata" poster="flowmap/poster.png" width="1280" height="720" aria-label="Flowmap Painter video demonstration">
+        <source src="flowmap/demo.mp4" type="video/mp4">
+        <p>Your browser cannot play this video. <a href="flowmap/demo.mp4">Open the MP4 demonstration.</a></p>
+      </video>
+      <figcaption>A scripted Unity demonstration using the original painting component and water shader. Brush positions are automated to show the painting and baking process.</figcaption>
+    </figure>
+    <section class="case-story" aria-labelledby="approach-title"><h2 id="approach-title">Make direction visible</h2><div><p>Water needs to follow the shape of its environment. This tool lets flow direction be authored directly on the surface rather than inferred from a single global scrolling direction.</p><p>The brush blends direction and speed into per-vertex data using adjustable radius, strength and falloff. Vector previews make that data readable, and a UV-space bake turns it into a texture that the water shader can sample.</p><ol class="case-process"><li><span class="step">01</span><h3>Paint</h3><p>Blend local flow directions with a surface brush.</p></li><li><span class="step">02</span><h3>Read</h3><p>Inspect the vector field before committing the result.</p></li><li><span class="step">03</span><h3>Bake</h3><p>Convert the vertex data into a flowmap for the shader.</p></li></ol></div></section>
+    <div class="case-gallery"><figure><img src="flowmap/detail-1.png" alt="The brush and painted flow vectors over the demonstration river mesh." width="1280" height="720" loading="lazy"><figcaption>The brush and painted flow vectors over the demonstration river mesh.</figcaption></figure><figure><img src="flowmap/detail-2.png" alt="Encoded flow direction on the river, alongside the actual 256 × 256 baked texture." width="1280" height="720" loading="lazy"><figcaption>Encoded flow direction on the river, alongside the actual 256 × 256 baked texture.</figcaption></figure></div>
+    <section class="case-notes" aria-labelledby="capture-title"><h2 id="capture-title">About the demo</h2><p>The example river is demonstration geometry. Flow is artist-authored shader data, so the result depends on mesh density, UV layout and the baked texture resolution.</p></section>
+  </main>
+  <footer class="case-footer"><a href="../../index.html#projects">← Back to the portfolio</a><a href="cloth-jobs-burst.html">Next: Cloth Simulation →</a></footer>
+</body>
+</html>

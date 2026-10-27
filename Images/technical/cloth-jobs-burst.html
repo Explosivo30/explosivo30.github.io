@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cloth Simulation — EXPLOSIVO30</title>
+  <meta name="description" content="A deformable mesh driven by particles and constraints, with Unity Jobs and Burst used for particle prediction and collision passes.">
+  <meta property="og:title" content="Cloth Simulation — EXPLOSIVO30">
+  <meta property="og:description" content="A deformable mesh driven by particles and constraints, with Unity Jobs and Burst used for particle prediction and collision passes.">
+  <meta property="og:image" content="https://explosivo30.github.io/Images/technical/cloth/poster.png">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="showcase.css?v=20261027-3">
+</head>
+<body class="case-page" style="--accent:#bc9fff">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="case-nav"><a class="case-logo" href="../../index.html">EXPLOSIVO<span>30</span></a><a class="case-back" href="../../index.html#projects">← All projects</a></header>
+  <main class="case-main" id="main">
+    <div class="case-hero">
+      <div><p class="case-kicker">03 / Simulation</p><h1>Cloth Simulation<span>Jobs &amp; Burst</span></h1><p class="case-lead">A deformable mesh driven by particles and constraints, with Unity Jobs and Burst used for particle prediction and collision passes.</p></div>
+      <dl class="case-facts"><div><dt>Focus</dt><dd>Physics programming</dd></div><div><dt>Built with</dt><dd>Unity 6 · C# · Jobs · Burst</dd></div><div><dt>Approach</dt><dd>Position-based constraints</dd></div></dl>
+    </div>
+    <figure class="case-player">
+      <div class="case-player-bar"><span><span class="case-live-dot"></span>PROJECT DEMONSTRATION</span><span>UNITY / SOURCE-DRIVEN CAPTURE</span></div>
+      <video controls playsinline preload="metadata" poster="cloth/poster.png" width="1280" height="720" aria-label="Cloth Simulation video demonstration">
+        <source src="cloth/demo.mp4" type="video/mp4">
+        <p>Your browser cannot play this video. <a href="cloth/demo.mp4">Open the MP4 demonstration.</a></p>
+      </video>
+      <figcaption>A scripted Unity demonstration of the existing cloth component, using a generated test mesh and animated collision objects in an isolated scene.</figcaption>
+    </figure>
+    <section class="case-story" aria-labelledby="approach-title"><h2 id="approach-title">From mesh to moving fabric</h2><div><p>The mesh is converted into particles and distance constraints. Duplicate vertex positions are welded for simulation, while selected particles stay pinned to their attachment points.</p><p>Each simulation step predicts particle positions, iterates the spring constraints and resolves sphere and box contacts. NativeArray buffers carry the simulation data. Prediction and collision work run as parallel jobs, with the constraint solve scheduled between them; the completed positions update the visible mesh.</p><ol class="case-process"><li><span class="step">01</span><h3>Attach</h3><p>Choose fixed particles and build constraints from the mesh.</p></li><li><span class="step">02</span><h3>Simulate</h3><p>Predict movement and iterate the dependent solve passes.</p></li><li><span class="step">03</span><h3>Collide</h3><p>Resolve sphere and box contacts, then update the surface.</p></li></ol></div></section>
+    <div class="case-gallery"><figure><img src="cloth/detail-1.png" alt="The simulated cloth responding to a collision object." width="1280" height="720" loading="lazy"><figcaption>The simulated cloth responding to a collision object.</figcaption></figure><figure><img src="cloth/detail-2.png" alt="Pinned particles and the deformation of the test surface." width="1280" height="720" loading="lazy"><figcaption>Pinned particles and the deformation of the test surface.</figcaption></figure></div>
+    <section class="case-notes" aria-labelledby="capture-title"><h2 id="capture-title">About the demo</h2><p>This is a Jobs/Burst experiment rather than an Entities ECS system. The presentation demonstrates deformation and contact behavior; it does not claim a performance benchmark, self-collision or production-ready garment simulation.</p></section>
+  </main>
+  <footer class="case-footer"><a href="../../index.html#projects">← Back to the portfolio</a><a href="ez-dungeon-painter.html">Next: EZ Dungeon Painter →</a></footer>
+</body>
+</html>

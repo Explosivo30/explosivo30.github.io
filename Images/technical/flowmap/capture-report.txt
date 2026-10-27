@@ -1,0 +1,8 @@
+FLOWMAP SOURCE-DRIVEN CAPTURE
+Original FlowmapPainter.cs and FlowmapWater.shader copied unchanged.
+Actual PaintAtPosition and BakeToTexture called on a generated demonstration river mesh.
+Resolution: 1280x720, 30 fps, 16 seconds.
+Vertices: 2567
+Painted vertices: 2567
+Actual baked texture: 256x256
+Procedural scene, brush automation, vector presentation, labels and camera are capture scaffolding. Not a GUI screen recording or performance benchmark.

@@ -1,0 +1,9 @@
+Genuine scripted source demonstration, not an editor UI recording.
+Source: Aerin-Fantasy/Assets/EZDundeonPainterTool/Runtime, unchanged copy.
+PASS — watertight cave shell | 15.160 vertices | 30.316 triangles | 1 shell(s)
+PLAYABLE BLOCKOUT | 9/9 spaces connected | 0 warning(s)
+Vertices: 15160
+Triangles: 30316
+Presentation: upper source mesh triangles hidden for cutaway; floor geometry not reimplemented.
+Media: 1280x720, 24fps, 432 frames, 18 seconds. MP4 encoded with UnityEditor.Media.MediaEncoder (H264).
+Source verification: all 11 copied runtime C# files have matching SHA256 hashes against the original project. Only capture scaffolding and presentation shader are new.

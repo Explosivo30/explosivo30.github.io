@@ -1,0 +1,6 @@
+Original source: ClothMeshCollisionJobs.cs (unchanged).
+Automated source-driven Unity capture; not a recording of an existing gameplay scene.
+1280x720; 30fps; 480 frames; 16 seconds.
+Mesh: 51x41=2091 particles; fixed top row; 12 solver iterations.
+Maximum observed Z displacement: 1,155115.
+Burst annotations and original scheduled Jobs retained; no benchmark or ECS claim.
