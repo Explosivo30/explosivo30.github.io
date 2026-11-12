@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Map Designer — Explosivo 30</title>
+  <meta name="description" content="A desktop tool for prototyping level layouts. Work in a 2D plan, inspect the space in 3D and explore it from the player's perspective.">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../technical/showcase.css">
+  <link rel="stylesheet" href="map-designer.css">
+  <script src="image-viewer.js" defer></script>
+</head>
+<body class="case-page map-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="case-nav"><a class="case-logo" href="../../index.html">Explosivo <span>30</span></a><a class="case-back" href="../../index.html#technical">← All tools</a></header>
+  <main class="case-main" id="main">
+    <div class="case-hero">
+      <div><p class="case-kicker">Desktop level design tool</p><h1>Map Designer</h1><p class="case-lead">Build a level layout. Explore it at player scale.</p><p class="map-intro">Arrange floors, walls and connections in a 2D plan, inspect the space in 3D and walk through the blockout from the player’s perspective.</p></div>
+      <dl class="case-facts"><div><dt>Platform</dt><dd>Windows 64-bit</dd></div><div><dt>Version</dt><dd>1.3.0 · Portable</dd></div><div><dt>Workflow</dt><dd>2D plan · 3D preview · Player view</dd></div></dl>
+    </div>
+    <figure class="case-player editor-figure" id="editor">
+      <div class="case-player-bar"><span>Inside Map Designer</span><span>3D view · Full editor</span></div>
+      <a class="editor-open" id="open-editor" href="mapdesigner-dust2-ui.png" aria-label="Enlarge the full Map Designer screenshot"><img src="mapdesigner-dust2-ui.png" alt="The complete Map Designer interface showing an editable Dust II inspired blockout in the 3D view, with building tools, levels and properties panels visible." width="1514" height="911"></a>
+      <figcaption><p>A simplified layout study inspired by Dust II, captured in Map Designer 1.3.0.</p><a class="image-action" id="enlarge-editor" href="mapdesigner-dust2-ui.png">View full editor <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>
+    <section class="workflow-section" aria-labelledby="workflow-title">
+      <h2 id="workflow-title">Prototype the layout before adding detail</h2>
+      <ul class="case-process map-process">
+        <li><h3>Build the layout</h3><p>Place floors, walls and blocks. Connect levels with ramps and stairs, and adjust the dimensions and heights of individual pieces.</p></li>
+        <li><h3>Inspect it in 3D</h3><p>Review the shape of the layout and its changes in height. Use the combined plan and 3D view to see both at once.</p></li>
+        <li><h3>Explore at player scale</h3><p>Choose a starting point on the floor plan and walk through the blockout. Inspect routes and spaces from the player’s perspective.</p></li>
+      </ul>
+    </section>
+    <section class="case-notes availability" aria-labelledby="portable-title"><h2 id="portable-title">Windows portable</h2><div><p><strong>Version 1.3.0 · Windows 64-bit · 139 MiB</strong></p><p class="availability-status">Download not yet available.</p></div></section>
+  </main>
+  <footer class="case-footer"><a href="../../index.html#technical">← Back to tools &amp; simulations</a><span>Explosivo 30</span></footer>
+  <dialog class="image-dialog" id="editor-dialog" aria-labelledby="viewer-title">
+    <div class="viewer-toolbar"><h2 id="viewer-title">Map Designer — full editor</h2><div class="viewer-actions"><button id="viewer-zoom" type="button" aria-pressed="false">Actual size</button><button id="viewer-close" type="button" autofocus>Close <span aria-hidden="true">×</span></button></div></div>
+    <div class="viewer-scroll" id="viewer-scroll" tabindex="0" aria-label="Editor screenshot. At actual size, scroll to inspect the image."><img src="mapdesigner-dust2-ui.png" alt="Full Map Designer screenshot: Dust II inspired blockout, building tools, levels and properties." width="1514" height="911"></div>
+    <p class="viewer-help" id="viewer-status" aria-live="polite">Full interface · Select Actual size to inspect the controls. Escape closes this view.</p>
+  </dialog>
+</body>
+</html>

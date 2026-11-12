@@ -557,3 +557,7 @@ footer span { color: var(--cyan); }
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr 1fr; } .about-avatar { display: none; } }
 @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } nav { padding: 0 20px; } .nav-links { gap: 16px; } section { padding: 60px 20px; } .modal-body { padding: 20px; } }
+/* Keep the complete desktop interface visible in the Map Designer preview. */
+.map-designer-card .card-img { object-fit: contain; filter: none; transform: none; }
+.map-designer-card:hover .card-img { filter: none; transform: none; }
+.map-designer-card .card-img-wrap::after { display: none; }

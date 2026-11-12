@@ -1,17 +1,21 @@
-# EZ Scene Collab media
+# EZ Scene Collab — media
 
-The pack contains a short advertisement, a longer recorded demo and five 1920 x 1080 PNG images. Both videos use H.264 at 30 fps.
+- trailer.mp4: 40-second edited showcase.
+- demo.mp4: 64-second editing-session video.
+- hero.png: environment overview.
+- feature-sync.png: both Editors from one recorded instant.
+- feature-locks.png: actual object ownership in the tool panel.
+- before.png / after.png: the same fixed view before and after a recorded placement.
+- Every PNG is the complete native dual-Editor source frame; both interfaces remain visible.
+- LinkedIn.txt: an editable Spanish post draft; nothing has been posted.
 
-- `trailer.mp4`: the short edit, with original instrumental music. Selected actions run at 1.4x speed.
-- `demo.mp4`: the 65-second editing workflow at its original speed. The edit alternates the main Editor view while keeping the other scene visible.
-- `hero.png`: advertisement poster, taken during a host edit.
-- `feature-sync.png`: host editing the shared bridge.
-- `feature-bidirectional.png`: client editing the pylon.
-- `feature-workflow.png`: creation and editing of the client's new object.
-- `feature-locks.png`: ownership and continued editing after the handoff.
-- `campaign-copy.md`: short descriptions and the product link.
-- `capture-verification.md`: recording provenance and checked actions.
+Recording: Unity 6, EZ Scene Collab Full Edition development build 1.1.0. Host edits use the native Inspector; the second Editor is assisted by discrete commands. One paired adjustment uses an event-triggered client command. This is a local demonstration, not two human operators. Video cuts preserve original action speed.
 
-The footage records two actual Unity Editor windows connected through EZ Scene Collab Full Edition on the same computer. The edits are automated in isolated demo projects. The recording begins with both Editors connected. The original product package was not modified.
+Environment artwork: Cyberpunk City / CyberAlley, HIVEMIND.
+Collaboration tool: Explosivo 30.
 
-The music was made for this edit using original synthesis, without third-party samples, speech, microphone or desktop audio. The demonstration has no audio track.
+See capture-verification.md for the recording method and limits. The pack contains rendered media only; it contains no Asset Store project files, product source, private logs or credentials.
+
+Tool details: https://explosivo30.github.io/ez-scene-collab/
+
+Recovery edit: every video frame and gallery image preserves both complete Editors at 3840×1080 (32:9). The 32-second ownership sequence in the short video is uninterrupted. No new Unity recording was made.

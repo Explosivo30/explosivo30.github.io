@@ -1,23 +1,17 @@
 # Recording details
 
-This material records two actual Unity 6000.0.58f2 Editor windows using EZ Scene Collab Full Edition. The Editors connect over TCP on the same Windows computer. An isolated demo harness drives the scene edits through the original product APIs. All 158 package files in both demo projects match the original source and the saved SHA-256 baseline.
+Recorded locally in two Unity 6 Editors using the EZ Scene Collab Full Edition development build 1.1.0 over a loopback TCP connection. This recording does not announce a new store release. Both Editors loaded the CyberAlley scene from HIVEMIND's Cyberpunk City environment package. The environment artwork is credited to HIVEMIND; Explosivo 30 developed the collaboration tool.
 
-The Unity interface, selections, gizmos, participants, ownership indicators and received scene changes come from the recording. No cursor, interface or receiving response was fabricated. The session begins with both Editors connected; it does not show the initial Host/Join button clicks.
+The Host's object positions were edited through the native Unity Inspector. The client used discrete editor commands. For the paired adjustment, one client command was triggered by observing the Host's real Inspector edit. This is an assisted demonstration, not a recording of two human operators.
 
-All seven checks passed for the final take:
+The footage shows street-light placement, repositioning scene dressing, the receipt of those changes in the other Editor, and transfer of the street light's ownership after the Host deselects it. Cameras and selections were prepared for the recording. The client's Scene View used its work-light setting; the environment's authored lighting was retained for the overview shots.
 
-| Check | Result |
-| --- | --- |
-| Both TCP sessions connected; scene cameras enabled | Passed |
-| Host bridge edit received by the client | Passed |
-| Client pylon edit received by the host | Passed |
-| Client-created beacon present in both Editors | Passed |
-| Beacon scale received by the host | Passed |
-| Bridge ownership passed from host to client | Passed |
-| Client's continued bridge edit received by the host | Passed |
+The short video and editing-session video contain cuts between recorded segments, all at their original speed. Each split-screen pair comes from the same instant of one native recording. The screenshots are native frames or faithful crops. No generated environment, invented Unity interface, synthetic pointer, interpolated object motion or redistributed Asset Store source files are included.
 
-The source recording is 3840 x 1080, H.264, 30 fps, 2160 frames and 72 seconds. Only the two Unity windows were captured. Each Editor occupies one 1920 x 1080 half, with padding that preserves native proportions. The exports crop and alternate between these views, with the other scene shown in an inset.
+This local recording does not establish Internet or LAN performance, human co-editing ergonomics, reconnect recovery, or support for every Unity component. It demonstrates the actions visible in this session.
 
-The advertisement uses complete selected actions at 1.4x speed and an original instrumental soundtrack. The 65-second demo preserves the workflow's original timing; its cuts change which Editor is shown as the main view. Neither export contains microphone or desktop audio. The demo has no audio track.
+The original tool package was preserved in both isolated recording projects. The video source projects, full native recordings and diagnostic traces remain private.
 
-This is an automated local demonstration. It does not measure physical LAN/VPN latency or demonstrate remote human teamwork, reconnect recovery, asset-file transfer or rejection of a conflicting selection. The camera-frustum overlay was disabled through the existing display control for the take and restored afterwards. Setup changes are confined to the demo projects.
+## Recovered edit
+
+The 40-second short video uses take03 at 46–54 and 98–130 seconds. The 64-second session uses take02 at 21–28 and 42–49 seconds, then take03 at 44–58 and 96–132 seconds. All segments retain both full native Editor windows at their original speed and 3840×1080 size. The gallery now uses the complete dual-Editor source frames as well. No new recording or scene edit was made for this revision.

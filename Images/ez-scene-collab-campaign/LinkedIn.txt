@@ -1,0 +1,10 @@
+Estoy trabajando en EZ Scene Collab, una herramienta para editar la misma escena desde distintos editores de Unity.
+
+En el vídeo se ven ajustes de una farola y de los elementos de la calle, cómo llegan al otro editor y cómo cambia el propietario del objeto para que otro participante continúe editándolo.
+
+Mi trabajo está en C#, la integración con el Editor y la sincronización mediante TCP. La escena es CyberAlley, de HIVEMIND. Es una demo local: edito desde el Inspector y el segundo editor está asistido por comandos; uno de sus ajustes responde al cambio observado en el Host.
+
+He dejado una sesión más larga y los detalles de la herramienta aquí:
+https://explosivo30.github.io/ez-scene-collab/
+
+Me interesa especialmente cómo resolveríais la selección y la propiedad de objetos cuando varias personas trabajan en la misma escena.

@@ -1,0 +1,5 @@
+.case-player .cloth-youtube { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; background: #05090f; }
+.cloth-performance { margin-top: 32px; padding-bottom: 0; }
+.cloth-performance p + p { margin-top: 12px; }
+.cloth-performance strong { color: #e8f3fc; }
+.cloth-performance a { text-underline-offset: 3px; }

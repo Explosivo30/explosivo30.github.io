@@ -1,4 +1,4 @@
-# Hello my name is Edgar Novas
+# Hello my name is Explosivo 30
 
 ### I'm a coder that knows many different languages like C, C#, C++, Python, and Java
 I'm a passionate coder that loves FPS, Turn Based Games, RTS **Developer at MayBStudios**
@@ -17,13 +17,13 @@ The programs I normally use are
 <br/>
 
 <h3>My socials and where I upload my games are</h3>
-<a href= "https://edgarnovas.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzk4MTUxMjEucG5n/315x250%23c/uNmwrd.png" width="200" height="150"/> </a>
+<a href= "https://explosivo30.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzk4MTUxMjEucG5n/315x250%23c/uNmwrd.png" width="200" height="150"/> </a>
 
-<a href= "https://edgarnovas.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzk1NTA0MDQucG5n/315x250%23c/DRlzHo.png" width="200" height="150"/> </a>
+<a href= "https://explosivo30.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzk1NTA0MDQucG5n/315x250%23c/DRlzHo.png" width="200" height="150"/> </a>
 
-<a href= "https://edgarnovas.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzkyMTIwOTUucG5n/315x250%23c/NFy233.png" width="200" height="150"/> </a>
+<a href= "https://explosivo30.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzkyMTIwOTUucG5n/315x250%23c/NFy233.png" width="200" height="150"/> </a>
 
-<a href= "https://edgarnovas.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzkxODQ1MTAuanBn/315x250%23c/B9ZLR3.jpg" width="200" height="150"/> </a>
+<a href= "https://explosivo30.itch.io/"><img border="0" alt="Explosivo30" src="https://img.itch.zone/aW1nLzkxODQ1MTAuanBn/315x250%23c/B9ZLR3.jpg" width="200" height="150"/> </a>
 
 <hr> </hr>
 I make games in my free time.

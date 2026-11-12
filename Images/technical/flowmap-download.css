@@ -1,0 +1,5 @@
+.flowmap-download { margin-top: 26px; }
+.flowmap-download a { display: inline-block; padding: 12px 20px; border: 1px solid var(--accent); background: var(--accent); color: #08151b; font-weight: 700; text-decoration: none; line-height: 1.5; }
+.flowmap-download a:hover { background: #b1edff; border-color: #b1edff; }
+.flowmap-download a:focus-visible { outline-offset: 5px; }
+.flowmap-download p { margin: 12px 0 0; color: #a5b9ca; font-size: .94rem; line-height: 1.5; }
